@@ -23,11 +23,5 @@ public class ThirdPersonCam : MonoBehaviour
         Vector3 viwDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viwDir.normalized;
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
-        if (inputDir != Vector3.zero)
-            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir, Time.deltaTime * rotationSpeed);
     }
 }
