@@ -20,6 +20,12 @@ public class FishMove : MonoBehaviour
     private float yVelocity = 0f;
 
     Lives Vidas;
+
+    SpawnManagerScript manager;
+    private void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag("SpawnerManager").GetComponent<SpawnManagerScript>();
+    }
     private void Start()
     {
         Vidas = FindAnyObjectByType<Lives>();
@@ -108,6 +114,7 @@ public class FishMove : MonoBehaviour
             Vidas.OnHitTaken();
             Vector3 knockbackDir = (transform.position - other.transform.position).normalized;
             knockbackVelocity = new Vector3(knockbackDir.x, 0, knockbackDir.z) * knockbackPower;
+            manager.Diminui();
         }
     }
 
