@@ -10,6 +10,12 @@ public class SpawnScript : MonoBehaviour
     [SerializeField] private float inimigoTimer;
     [SerializeField] private float outmigoTimer;
 
+    SpawnManagerScript manager;
+
+    private void Awake()
+    {
+        manager = transform.parent.GetComponent<SpawnManagerScript>();
+    }
     private void Start()
     {
         StartCoroutine(spawnCreator(inimigoTimer, inimigo));
@@ -19,7 +25,11 @@ public class SpawnScript : MonoBehaviour
     private IEnumerator spawnCreator(float interval, GameObject creature)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newCreature = Instantiate(creature, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (manager.pode)
+        {
+            GameObject newCreature = Instantiate(creature, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            manager.Aumenta();
+        }
         StartCoroutine(spawnCreator(interval, creature));
     }
 }
