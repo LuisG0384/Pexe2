@@ -10,6 +10,8 @@ TagManager:
   - ComidaDiva
   - BolaDoInimigo
   - SpawnerManager
+  - "Ch\xE3o"
+  - Lixo
   layers:
   - Default
   - TransparentFX
