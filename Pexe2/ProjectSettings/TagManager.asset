@@ -12,6 +12,7 @@ TagManager:
   - SpawnerManager
   - "Ch\xE3o"
   - Lixo
+  - Graminha
   layers:
   - Default
   - TransparentFX

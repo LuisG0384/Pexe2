@@ -5,9 +5,12 @@ using UnityEngine;
 public class FishBom : MonoBehaviour
 {
     SpawnManagerScript manager;
+    CollectedText indice;
+
     private void Awake()
     {
         manager = GameObject.FindGameObjectWithTag("SpawnerManager").GetComponent<SpawnManagerScript>();
+        indice = FindAnyObjectByType<CollectedText>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +18,7 @@ public class FishBom : MonoBehaviour
         {
             Debug.Log("Comeu");
             Destroy(other.gameObject.transform.parent.gameObject);
+            indice.OnCollectedFoodText();
             manager.Diminui();
         }
     }

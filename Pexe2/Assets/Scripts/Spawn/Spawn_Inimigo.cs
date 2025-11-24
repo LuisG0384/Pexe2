@@ -4,32 +4,44 @@ using UnityEngine;
 
 public class Spawn_Inimigo : MonoBehaviour
 {
-    [Header("Configuração do Inimigo")]
-    [SerializeField] GameObject inimigo; 
-    [SerializeField] private float inimigoTimer = 5f; 
-    [SerializeField] private int maximoInimigos = 3;  
+    [Header("Configuração dos Inimigos")]
+    [SerializeField] GameObject[] listaDeInimigos; 
+    [SerializeField] private float inimigoTimer = 5f;
+    [SerializeField] private int maximoInimigos = 3;
+    [SerializeField] CharacterController controller;
+
+    [Header("Área Global (Arraste o Box Collider)")]
+    public BoxCollider areaDeSpawn; 
 
     SpawnManagerScript manager;
 
     private void Awake()
     {
-        
         if (transform.parent != null)
         {
             manager = transform.parent.GetComponent<SpawnManagerScript>();
         }
+
+        if (controller == null)
+        {
+            controller = GetComponent<CharacterController>();
+        }
+
+        if (areaDeSpawn == null)
+            areaDeSpawn = GetComponent<BoxCollider>();
     }
+
+
 
     private void Start()
     {
-        
-        if (inimigo != null)
+        if (listaDeInimigos.Length > 0 && areaDeSpawn != null)
         {
             StartCoroutine(SpawnInimigosRoutine());
         }
         else
         {
-            Debug.LogError("ERRO: Você esqueceu de arrastar o Inimigo para o Inspector!");
+            Debug.LogError("ERRO: Verifique se a Lista de Inimigos tem itens E se o BoxCollider existe!");
         }
     }
 
@@ -37,7 +49,7 @@ public class Spawn_Inimigo : MonoBehaviour
     {
         while (true)
         {
-          
+            
             float tempoAleatorio = Random.Range(inimigoTimer - 1f, inimigoTimer + 1f);
             if (tempoAleatorio < 1f) tempoAleatorio = 1f;
 
@@ -49,7 +61,24 @@ public class Spawn_Inimigo : MonoBehaviour
             
             if (manager != null && manager.pode && contagemAtual < maximoInimigos)
             {
-                Instantiate(inimigo, transform.position, Quaternion.identity);
+                
+                int indexAleatorio = Random.Range(0, listaDeInimigos.Length);
+                GameObject prefabSorteado = listaDeInimigos[indexAleatorio];
+
+                
+                Bounds limites = areaDeSpawn.bounds;
+
+                float x = Random.Range(limites.min.x, limites.max.x);
+                float y = Random.Range(limites.min.y, limites.max.y);
+                float z = Random.Range(limites.min.z, limites.max.z);
+
+                Vector3 posicaoAleatoria = new Vector3(x, y, z);
+
+                
+                Quaternion rotacaoAleatoria = Quaternion.Euler(0, Random.Range(0, 360), 0);
+
+                Instantiate(prefabSorteado, posicaoAleatoria, rotacaoAleatoria);
+
                 manager.Aumenta();
             }
         }
