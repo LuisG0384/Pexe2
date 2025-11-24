@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: bcc5aeae0762f184ab53ee714330e3b5, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3305,11 +3305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3317,11 +3317,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3329,7 +3329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3964,7 +3964,7 @@ Transform:
   m_GameObject: {fileID: 795665377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.38}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5022,15 +5022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38f74cd884cda8242b4fdc167c4962f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38f74cd884cda8242b4fdc167c4962f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38f74cd884cda8242b4fdc167c4962f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.03
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38f74cd884cda8242b4fdc167c4962f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5203,8 +5203,6 @@ MonoBehaviour:
   cam: {fileID: 1776622674}
   speed: 6
   verticalSpeed: 4
-  maxTiltAngle: 30
-  tiltSpeed: 5
   turnSmoothTime: 0.1
 --- !u!1 &1094442295
 GameObject:
@@ -6748,8 +6746,6 @@ MonoBehaviour:
   speed: 6
   verticalSpeed: 4
   turnSmoothTime: 0.1
-  maxTiltAngle: 30
-  tiltSpeed: 3
   isTargetDetected: 0
   Target: {fileID: 0}
 --- !u!143 &1422181230
@@ -9728,11 +9724,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2015553196}
-  speed: 8
-  verticalSpeed: 4
+  speed: 0
+  verticalSpeed: 0
   turnSmoothTime: 0.1
-  maxTiltAngle: 30
-  tiltSpeed: 5
   isTargetDetected: 0
   Target: {fileID: 0}
 --- !u!143 &2015553196

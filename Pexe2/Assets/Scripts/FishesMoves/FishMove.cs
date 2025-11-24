@@ -5,13 +5,21 @@ public class FishMove : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Transform cam;
 
+    [Header("Configuração de Movimento")]
     public float speed = 6f;
     public float verticalSpeed = 4f;
+
+    [Header("Configuração de Inclinação (Novo)")]
+    public float maxTiltAngle = 45f; 
+    public float tiltSpeed = 5f;    
+    private float currentTilt = 0f; 
+
+    
     float dashCount = 100;
     bool dashBool = false;
 
     private float knockbackPower = 20f;
-    private float knockbackDecay = 5f; 
+    private float knockbackDecay = 5f;
     private Vector3 knockbackVelocity = Vector3.zero;
 
     public float turnSmoothTime = 0.1f;
@@ -20,12 +28,15 @@ public class FishMove : MonoBehaviour
     private float yVelocity = 0f;
 
     Lives Vidas;
-
     SpawnManagerScript manager;
+
     private void Awake()
     {
-        manager = GameObject.FindGameObjectWithTag("SpawnerManager").GetComponent<SpawnManagerScript>();
+     
+        GameObject managerObj = GameObject.FindGameObjectWithTag("SpawnerManager");
+        if (managerObj != null) manager = managerObj.GetComponent<SpawnManagerScript>();
     }
+
     private void Start()
     {
         Vidas = FindAnyObjectByType<Lives>();
@@ -33,22 +44,33 @@ public class FishMove : MonoBehaviour
 
     void Update()
     {
+      
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+     
+        float targetTilt = 0f;
+
         if (Input.GetKey(KeyCode.Space))
         {
-            yVelocity = verticalSpeed; 
+            yVelocity = verticalSpeed;
+            targetTilt = -maxTiltAngle; 
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
-            yVelocity = -verticalSpeed; 
+            yVelocity = -verticalSpeed;
+            targetTilt = maxTiltAngle; 
         }
         else
         {
             yVelocity = 0f;
+            targetTilt = 0f;
         }
+
+   
+        currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
+
 
         if (dashBool)
         {
@@ -64,11 +86,12 @@ public class FishMove : MonoBehaviour
             }
             else
             {
-                if(Input.GetKey(KeyCode.Q))
+                if (Input.GetKey(KeyCode.Q))
                 {
-                    dashCount-=15;
+                    dashCount -= 15;
                     speed = 40f;
-                }else
+                }
+                else
                 {
                     if (dashCount < 1000) dashCount++;
                     speed = 6f;
@@ -76,20 +99,28 @@ public class FishMove : MonoBehaviour
             }
         }
 
-       Vector3 finalMove = Vector3.zero;
+        Vector3 finalMove = Vector3.zero;
 
 
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+
+            transform.rotation = Quaternion.Euler(currentTilt, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
             finalMove = moveDir.normalized * speed;
         }
+        else
+        {
+
+            transform.rotation = Quaternion.Euler(currentTilt, transform.eulerAngles.y, 0f);
+        }
 
         finalMove.y = yVelocity;
+
 
         if (knockbackVelocity.sqrMagnitude > 0.01f)
         {
@@ -100,22 +131,24 @@ public class FishMove : MonoBehaviour
         {
             knockbackVelocity = Vector3.zero;
         }
-        
 
-        if (finalMove.sqrMagnitude > 0.001f)
+
+        if (finalMove.sqrMagnitude > 0.001f || Mathf.Abs(yVelocity) > 0.01f) 
         {
             controller.Move(finalMove * Time.deltaTime);
         }
     }
-    private void OnTriggerEnter (Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BolaDoInimigo"))
         {
-            Vidas.OnHitTaken();
+            if (Vidas != null) Vidas.OnHitTaken();
+
             Vector3 knockbackDir = (transform.position - other.transform.position).normalized;
             knockbackVelocity = new Vector3(knockbackDir.x, 0, knockbackDir.z) * knockbackPower;
-            manager.Diminui();
+
+            if (manager != null) manager.Diminui();
         }
     }
-
 }

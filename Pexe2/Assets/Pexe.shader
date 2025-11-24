@@ -14,8 +14,7 @@ Shader "Custom/Pexe"
         LOD 200
 
         CGPROGRAM
-        // ADICIONEI "addshadow" AQUI EMBAIXO
-        // Isso faz a sombra acompanhar os vértices modificados
+
         #pragma surface surf Standard fullforwardshadows vertex:vert addshadow
         
         #pragma target 3.0
@@ -31,12 +30,12 @@ Shader "Custom/Pexe"
             float2 uv_MainTex;
         };
 
-        // --- Mantendo a correção dos eixos X e Z ---
+
         void vert (inout appdata_full v) {
             float wave = sin(v.vertex.x * _Frequency + _Time.y * _Speed) * _Amplitude;
             v.vertex.z += wave;
         }
-        // ------------------------------------------
+
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
