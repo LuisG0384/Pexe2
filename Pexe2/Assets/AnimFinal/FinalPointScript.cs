@@ -8,8 +8,10 @@ public class FinalPoint : MonoBehaviour
     TMPro.TMP_Text text;
     int count = 30;
     [SerializeField] GameObject plataforma;
+    [SerializeField] ParticleSystem fedor;
     private void Awake()
     {
+        fedor.Stop();
         text = GetComponent<TMPro.TMP_Text>();
 
         StartCoroutine(LoopTextUpdate());
@@ -17,15 +19,19 @@ public class FinalPoint : MonoBehaviour
 
     private IEnumerator LoopTextUpdate()
     {
+        int point = 0;
         for (int i = 0; i < count; i++)
         {
-            text.text = UnityEngine.Random.Range(0, 100).ToString();
+            point = UnityEngine.Random.Range(0, 100);
+            text.text = point.ToString();
 
             yield return new WaitForSeconds(0.125f);
 
         }
 
         Destroy(plataforma);
+        yield return new WaitForSeconds(0.12f);
+        if(point < 10) fedor.Play();
     }
 
 }
