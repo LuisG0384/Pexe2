@@ -1,22 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class FishMove : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
     [SerializeField] Transform cam;
 
+    [Header("UI do Boost (Arraste aqui)")]
+    public Slider sliderBoost;    
+    public Image fillImage;       
+    public Color corNormal = Color.cyan;  
+    public Color corExausto = Color.red; 
+
     [Header("Configuração de Movimento")]
     public float speed = 6f;
     public float verticalSpeed = 4f;
 
-    [Header("Configuração de Inclinação (Novo)")]
-    public float maxTiltAngle = 45f; 
-    public float tiltSpeed = 5f;    
-    private float currentTilt = 0f; 
+    [Header("Configuração de Inclinação")]
+    public float maxTiltAngle = 45f;
+    public float tiltSpeed = 5f;
+    private float currentTilt = 0f;
 
     
-    float dashCount = 100;
-    bool dashBool = false;
+    float dashCount = 1000; 
+    bool dashBool = false; 
 
     private float knockbackPower = 20f;
     private float knockbackDecay = 5f;
@@ -32,7 +39,6 @@ public class FishMove : MonoBehaviour
 
     private void Awake()
     {
-     
         GameObject managerObj = GameObject.FindGameObjectWithTag("SpawnerManager");
         if (managerObj != null) manager = managerObj.GetComponent<SpawnManagerScript>();
     }
@@ -40,27 +46,45 @@ public class FishMove : MonoBehaviour
     private void Start()
     {
         Vidas = FindAnyObjectByType<Lives>();
+
+        
+        if (sliderBoost != null)
+        {
+            sliderBoost.maxValue = 1000;
+            sliderBoost.value = dashCount;
+        }
     }
 
     void Update()
     {
-      
+        
+        if (sliderBoost != null)
+        {
+            sliderBoost.value = dashCount;
+
+            
+            if (fillImage != null)
+            {
+                if (dashBool) fillImage.color = corExausto;
+                else fillImage.color = corNormal;
+            }
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-     
         float targetTilt = 0f;
 
         if (Input.GetKey(KeyCode.Space))
         {
             yVelocity = verticalSpeed;
-            targetTilt = -maxTiltAngle; 
+            targetTilt = -maxTiltAngle;
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
             yVelocity = -verticalSpeed;
-            targetTilt = maxTiltAngle; 
+            targetTilt = maxTiltAngle;
         }
         else
         {
@@ -68,30 +92,35 @@ public class FishMove : MonoBehaviour
             targetTilt = 0f;
         }
 
-   
         currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
 
-
-        if (dashBool)
+        
+        if (dashBool) 
         {
-            if (dashCount < 1000) dashCount++;
-            else dashBool = false;
+            if (dashCount < 1000)
+            {
+                dashCount += 2; //Recuperação de boost
+            }
+            else
+            {
+                dashBool = false; 
+            }
         }
-        else
+        else 
         {
             if (dashCount <= 0)
             {
-                dashBool = true;
+                dashBool = true; 
                 speed = 6f;
             }
             else
             {
-                if (Input.GetKey(KeyCode.Q))
+                if (Input.GetKey(KeyCode.Q)) 
                 {
                     dashCount -= 15;
                     speed = 40f;
                 }
-                else
+                else 
                 {
                     if (dashCount < 1000) dashCount++;
                     speed = 6f;
@@ -101,12 +130,10 @@ public class FishMove : MonoBehaviour
 
         Vector3 finalMove = Vector3.zero;
 
-
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-
 
             transform.rotation = Quaternion.Euler(currentTilt, angle, 0f);
 
@@ -115,12 +142,10 @@ public class FishMove : MonoBehaviour
         }
         else
         {
-
             transform.rotation = Quaternion.Euler(currentTilt, transform.eulerAngles.y, 0f);
         }
 
         finalMove.y = yVelocity;
-
 
         if (knockbackVelocity.sqrMagnitude > 0.01f)
         {
@@ -132,8 +157,7 @@ public class FishMove : MonoBehaviour
             knockbackVelocity = Vector3.zero;
         }
 
-
-        if (finalMove.sqrMagnitude > 0.001f || Mathf.Abs(yVelocity) > 0.01f) 
+        if (finalMove.sqrMagnitude > 0.001f || Mathf.Abs(yVelocity) > 0.01f)
         {
             controller.Move(finalMove * Time.deltaTime);
         }
