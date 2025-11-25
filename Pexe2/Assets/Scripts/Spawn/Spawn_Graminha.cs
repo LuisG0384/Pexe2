@@ -2,80 +2,82 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerTerreno_Graminha : MonoBehaviour
+public class Spawn_Graminha : MonoBehaviour
 {
     [Header("Configuração da Grama")]
     [SerializeField] GameObject[] listaDeGramas;
     [SerializeField] private float tempoSpawn = 2f;
 
-    [Header("Referência do Terreno")]
-    public Terrain terreno;
+    [Header("Referência do Terreno (OBRIGATÓRIO)")]
+    public Terrain terreno; 
 
-    [Header("Limites")]
+    [Header("Limites de População")]
     [SerializeField] private int maximoGramas = 50;
+    [SerializeField] private int minimoParaReiniciar = 20;
+
+    private bool spawnAtivo = true;
 
     private void Start()
     {
-        if (terreno == null) terreno = Terrain.activeTerrain;
-        if (terreno == null) Debug.LogError(" ERRO: Não achei nenhum Terreno na cena!");
+        
+        if (terreno == null)
+            terreno = Terrain.activeTerrain;
 
-        StartCoroutine(SpawnRotina());
+        if (listaDeGramas.Length > 0 && terreno != null)
+        {
+            StartCoroutine(SpawnRotina());
+        }
+        else
+        {
+            Debug.LogError("ERRO: O Script precisa do TERRENO para calcular a altura!");
+        }
     }
 
     private IEnumerator SpawnRotina()
     {
         while (true)
         {
-            yield return new WaitForSeconds(tempoSpawn);
+            float tempoRandom = Random.Range(tempoSpawn - 0.5f, tempoSpawn + 0.5f);
+            yield return new WaitForSeconds(tempoRandom);
 
-            // Tenta spawnar
-            SpawnarNoTerreno();
+            
+            int contagemAtual = GameObject.FindGameObjectsWithTag("Graminha").Length;
+
+            
+            if (contagemAtual >= maximoGramas) spawnAtivo = false;
+            else if (contagemAtual <= minimoParaReiniciar) spawnAtivo = true;
+
+            
+            if (spawnAtivo && contagemAtual < maximoGramas)
+            {
+                SpawnarMatematico();
+            }
         }
     }
 
-    void SpawnarNoTerreno()
+    void SpawnarMatematico()
     {
-        if (terreno == null) return;
-
+        
+        Vector3 posicaoDoTerreno = terreno.transform.position;
         TerrainData dados = terreno.terrainData;
-        Vector3 posicaoTerreno = terreno.transform.position;
 
-        // Escolhe posição
-        float x = posicaoTerreno.x + Random.Range(0, dados.size.x);
-        float z = posicaoTerreno.z + Random.Range(0, dados.size.z);
+        
+        float xAleatorio = posicaoDoTerreno.x + Random.Range(0, dados.size.x);
+        float zAleatorio = posicaoDoTerreno.z + Random.Range(0, dados.size.z);
 
-        // Começa bem alto (200 metros acima do terreno)
-        float yAlto = posicaoTerreno.y + dados.size.y + 200f;
+        
+        float alturaY = terreno.SampleHeight(new Vector3(xAleatorio, 0, zAleatorio));
 
-        Vector3 origemDoRaio = new Vector3(x, yAlto, z);
+        
+        float yFinal = posicaoDoTerreno.y + alturaY;
 
-        // --- DEBUG VISUAL ---
-        // Desenha uma linha vermelha na Scene (vai aparecer por 2 segundos)
-        Debug.DrawRay(origemDoRaio, Vector3.down * 1000f, Color.red, 2f);
+        
+        Vector3 localDeNascimento = new Vector3(xAleatorio, yFinal, zAleatorio);
 
-        RaycastHit hit;
-        if (Physics.Raycast(origemDoRaio, Vector3.down, out hit, 1000f))
-        {
-            // O raio bateu em alguma coisa! Vamos ver o que é.
-            Debug.Log($" Raio bateu em: {hit.collider.gameObject.name} | Tag: {hit.collider.tag}");
+        
+        GameObject prefabSorteado = listaDeGramas[Random.Range(0, listaDeGramas.Length)];
+        Quaternion rotacaoAleatoria = Quaternion.Euler(0, Random.Range(0, 360), 0);
 
-            if (hit.collider.CompareTag("Chão") || hit.collider.CompareTag("Terrain"))
-            {
-                if (listaDeGramas.Length > 0)
-                {
-                    GameObject prefab = listaDeGramas[Random.Range(0, listaDeGramas.Length)];
-                    Instantiate(prefab, hit.point, Quaternion.identity);
-                    Debug.Log(" Grama plantada com sucesso!");
-                }
-            }
-            else
-            {
-                Debug.LogWarning($" Achei chão, mas a Tag está errada! A Tag é '{hit.collider.tag}', mas preciso de 'Chao'.");
-            }
-        }
-        else
-        {
-            Debug.LogError(" O raio não bateu em NADA! Talvez esteja começando baixo demais ou fora do mapa.");
-        }
+        Instantiate(prefabSorteado, localDeNascimento, rotacaoAleatoria);
     }
 }
