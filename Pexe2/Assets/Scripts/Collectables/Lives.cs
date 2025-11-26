@@ -1,45 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Necessário para mexer com Imagens
+using UnityEngine.UI; // Necessário para o Slider
 
 public class Lives : MonoBehaviour
 {
-    [Header("Configuração")]
-    public GameObject heartPrefab; // Arraste seu Prefab de coração aqui
-    public int maxLives = 3;
+    [Header("UI da Vida")]
+    public Slider barraDeVida; // Arraste seu Slider aqui no Inspector
 
+    [Header("Configuração")]
+    public int maxLives = 100; // Vida máxima (ex: 100%)
     private int currentLives;
-    private List<GameObject> hearts = new List<GameObject>();
 
     private void Start()
     {
         currentLives = maxLives;
-        DrawHearts();
-    }
 
-    void DrawHearts()
-    {
-        // Limpa corações antigos (se houver)
-        foreach (Transform child in transform)
+        // Configura a barra logo no início
+        if (barraDeVida != null)
         {
-            Destroy(child.gameObject);
+            barraDeVida.maxValue = maxLives;
+            barraDeVida.value = currentLives;
         }
-        hearts.Clear();
-
-        // Cria novos corações baseados na vida máxima
-        for (int i = 0; i < maxLives; i++)
+        else
         {
-            GameObject newHeart = Instantiate(heartPrefab, transform);
-            hearts.Add(newHeart);
+            Debug.LogError("ERRO: Você esqueceu de arrastar o Slider para o script Lives!");
         }
     }
 
     public void OnLifeRestore()
     {
+        // Se a vida não estiver cheia, cura
         if (currentLives < maxLives)
         {
-            currentLives++;
+            currentLives += 10; // Cura 10 pontos (ajuste como quiser)
+
+            // Não deixa passar do máximo
+            if (currentLives > maxLives) currentLives = maxLives;
+
             UpdateVisuals();
         }
     }
@@ -48,28 +46,45 @@ public class Lives : MonoBehaviour
     {
         if (currentLives > 0)
         {
-            currentLives--;
+            currentLives -= 10; // Perde 10 pontos de dano (ajuste como quiser)
+
+            // Garante que não fique negativo
+            if (currentLives < 0) currentLives = 0;
+
             UpdateVisuals();
+
+            // Lógica de Morte (Vida zerou)
+            if (currentLives <= 0)
+            {
+                PararTimer();
+                // Aqui você pode chamar o Game Over
+                Debug.Log("Morreu!");
+            }
         }
     }
 
     void UpdateVisuals()
     {
-        // Loop para ligar ou desligar os corações
-        for (int i = 0; i < hearts.Count; i++)
+        if (barraDeVida != null)
         {
-            // Se o índice for menor que a vida atual, mostra o coração. Senão, esconde.
-            if (i < currentLives)
-            {
-                hearts[i].SetActive(true);
-                // Dica: Em vez de SetActive, você pode trocar o sprite para um "coração vazio"
-                // hearts[i].GetComponent<Image>().sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].SetActive(false);
-                // hearts[i].GetComponent<Image>().sprite = emptyHeart;
-            }
+            // Atualiza o slider visualmente
+            barraDeVida.value = currentLives;
+        }
+    }
+
+    void PararTimer()
+    {
+        // Tenta achar o Timer (verifique se o nome do seu script é Timer ou TimerRegressivo)
+        Timer timer = FindAnyObjectByType<Timer>();
+        if (timer != null)
+        {
+            timer.enabled = false;
+        }
+        else
+        {
+            // Caso esteja usando o script que fizemos antes
+            Timer timerR = FindAnyObjectByType<Timer>();
+            if (timerR != null) timerR.enabled = false;
         }
     }
 }
