@@ -14,7 +14,6 @@ public class InimigueMove : MonoBehaviour
     Vector3 finalMove = Vector3.zero;
 
     
-    [Header("Configuração de Inclinação")]
     public float maxTiltAngle = 45f; 
     public float tiltSpeed = 3f;     
     private float currentTilt = 0f;

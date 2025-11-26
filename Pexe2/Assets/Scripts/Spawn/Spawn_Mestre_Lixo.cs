@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class SpawnerGlobal : MonoBehaviour
 {
-    [Header("O que vai nascer?")]
     public GameObject prefabLixo;
 
-    [Header("Configurações")]
     public float intervaloSpawn = 2f; 
     public int limiteMaximo = 20;     
 
-    [Header("Área (Arraste o Box Collider aqui)")]
     public BoxCollider areaDeSpawn;
 
     private void Start()

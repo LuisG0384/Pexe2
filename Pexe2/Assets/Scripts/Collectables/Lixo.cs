@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Lixo : MonoBehaviour
 {
-    [Header("Configurações de Queda")]
     public float velocidadeAfundar = 2f;
     public float tempoNoChao = 3f; 
     public float velocidadeRotacao = 50f; 

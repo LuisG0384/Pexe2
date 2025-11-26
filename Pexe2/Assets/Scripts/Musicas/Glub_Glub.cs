@@ -3,11 +3,9 @@ using System.Collections;
 
 public class SomAleatorio : MonoBehaviour
 {
-    [Header("Configurações")]
     public AudioSource audioSource;
     public AudioClip[] listaDeSons; 
 
-    [Header("Tempo de Espera (Segundos)")]
     public float tempoMinimo = 5f; 
     public float tempoMaximo = 15f; 
 

@@ -5,14 +5,11 @@ using System.Collections;
 
 public class Lives : MonoBehaviour
 {
-    [Header("UI da Vida")]
     public Slider barraDeVida;
 
-    [Header("Tela de Game Over")]
     public GameObject painelGameOver;
     public float tempoDoFade = 2.0f; 
 
-    [Header("Configuração")]
     public int maxLives = 100;
     private int currentLives;
 
@@ -66,7 +63,6 @@ public class Lives : MonoBehaviour
 
     IEnumerator AnimacaoGameOver()
     {
-        Debug.Log("Iniciando Fade de Game Over...");
 
         
         Timer timer = FindAnyObjectByType<Timer>();
@@ -102,7 +98,6 @@ public class Lives : MonoBehaviour
             cg.alpha = 1;
         }
 
-        // 4. SÓ AGORA Pausa o jogo e solta o mouse
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -110,7 +105,6 @@ public class Lives : MonoBehaviour
 
     public void ReiniciarFase()
     {
-        // Importante: Voltar o tempo ao normal antes de recarregar
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

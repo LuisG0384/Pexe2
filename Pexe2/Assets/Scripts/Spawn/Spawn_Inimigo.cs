@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawn_Inimigo : MonoBehaviour
 {
-    [Header("Configuração dos Inimigos")]
     [SerializeField] GameObject[] listaDeInimigos; 
     [SerializeField] private float inimigoTimer = 5f;
     private int maximoTuba = 7;

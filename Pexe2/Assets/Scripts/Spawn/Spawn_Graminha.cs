@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Spawn_Graminha : MonoBehaviour
 {
-    [Header("Configuração da Grama")]
     [SerializeField] GameObject[] listaDeGramas;
     [SerializeField] private float tempoSpawn = 2f;
 
-    [Header("Referência do Terreno (OBRIGATÓRIO)")]
     public Terrain terreno; 
 
-    [Header("Limites de População")]
     [SerializeField] private int maximoGramas = 50;
     [SerializeField] private int minimoParaReiniciar = 20;
 

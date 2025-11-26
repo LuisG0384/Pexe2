@@ -6,17 +6,14 @@ public class FishMove : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Transform cam;
 
-    [Header("UI do Boost (Arraste aqui)")]
     public Slider sliderBoost;    
     public Image fillImage;       
     public Color corNormal = Color.cyan;  
     public Color corExausto = Color.red; 
 
-    [Header("Configuração de Movimento")]
     public float speed = 6f;
     public float verticalSpeed = 4f;
 
-    [Header("Configuração de Inclinação")]
     public float maxTiltAngle = 45f;
     public float tiltSpeed = 5f;
     private float currentTilt = 0f;
@@ -99,7 +96,7 @@ public class FishMove : MonoBehaviour
         {
             if (dashCount < 1000)
             {
-                dashCount += 2; //Recuperação de boost
+                dashCount += 2; 
             }
             else
             {

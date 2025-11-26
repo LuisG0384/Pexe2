@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class SpawnerGlobal_Comida : MonoBehaviour
 {
-    [Header("Configuração da Comida")]
     [SerializeField] GameObject[] listaDeComidas; 
     [SerializeField] private float tempoSpawn = 3f;
 
-    [Header("Área Global (Arraste o Box Collider)")]
     public BoxCollider areaDeSpawn; 
 
-    [Header("Limites de População")]
     [SerializeField] private int maximoComidas = 10;
     [SerializeField] private int minimoParaReiniciar = 5;
 
