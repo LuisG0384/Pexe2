@@ -1,35 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class RadarScript : MonoBehaviour
 {
     private InimigueMove InimigueMove;
+    GameObject som;
+    AudioScript controle;
+
+    float originalVolume;
+    float fadeOutDuration = 0.5f;
 
     void Start()
     {
         InimigueMove = GetComponentInParent<InimigueMove>();
+        som = GameObject.Find("AudioManager");
+        controle = som.GetComponent<AudioScript>();
+
 
         if (InimigueMove == null)
         {
-            Debug.LogError("O script RadarDetector não conseguiu encontrar FishMove no objeto pai. A comunicação falhará.");
+            Debug.LogError("O script RadarDetector nï¿½o conseguiu encontrar FishMove no objeto pai. A comunicaï¿½ï¿½o falharï¿½.");
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             InimigueMove.Target = other.transform;
             //Debug.Log(other.transform.position.x);
             InimigueMove.isTargetDetected = true;
+            InimigueMove.isTargetDetected = controle.inimigoDetectado = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             InimigueMove.isTargetDetected = false;
+            InimigueMove.isTargetDetected = controle.inimigoDetectado = false;
         }
-    }
+}
 }
