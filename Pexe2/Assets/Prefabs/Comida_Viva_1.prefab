@@ -156,8 +156,8 @@ GameObject:
   - component: {fileID: 2234124622101118826}
   - component: {fileID: 7250135279104850404}
   - component: {fileID: 766161467476503770}
-  - component: {fileID: 7456060117871427351}
   - component: {fileID: 6864019927559374553}
+  - component: {fileID: 7456060117871427351}
   m_Layer: 0
   m_Name: Comida_Viva_1
   m_TagString: ComidaDiva
@@ -255,6 +255,23 @@ MonoBehaviour:
   tiltSpeed: 5
   isTargetDetected: 0
   Target: {fileID: 0}
+--- !u!114 &6864019927559374553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982360528425734211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b0f296b55740c4f80672061b5bf142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SomAleatorio
+  audioSource: {fileID: 0}
+  listaDeSons:
+  - {fileID: 8300000, guid: 0c2103b5c53b4e44db3303b800163ba4, type: 3}
+  tempoMinimo: 5
+  tempoMaximo: 15
 --- !u!82 &7456060117871427351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -276,7 +293,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.5
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
@@ -352,23 +369,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6864019927559374553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982360528425734211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b0f296b55740c4f80672061b5bf142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SomAleatorio
-  audioSource: {fileID: 0}
-  listaDeSons:
-  - {fileID: 8300000, guid: 0c2103b5c53b4e44db3303b800163ba4, type: 3}
-  tempoMinimo: 5
-  tempoMaximo: 15
 --- !u!1 &3556002180837636921
 GameObject:
   m_ObjectHideFlags: 0
