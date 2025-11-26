@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class CollectedText : MonoBehaviour
 {
-    TMPro.TMP_Text text;
+    public TMPro.TMP_Text texto;
     int count;
     private void Awake()
     {
-        text = GetComponent<TMPro.TMP_Text>();
+        texto = GetComponent<TMPro.TMP_Text>();
     }
 
     public void OnCollectedFoodText()
     {
-        text.text = (++count).ToString();
+        texto.text = (++count).ToString();
     }
 
     public void OnCollectedTrashText()
     {
-        text.text = (--count).ToString();
+        texto.text = (--count).ToString();
     }
 
 }

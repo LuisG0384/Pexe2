@@ -5195,6 +5195,201 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e6abd48d90d4e418d3d2ced9e0b6ba, type: 3}
+--- !u!1 &241700761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241700762}
+  - component: {fileID: 241700764}
+  - component: {fileID: 241700763}
+  - component: {fileID: 241700765}
+  m_Layer: 5
+  m_Name: "TextoMalef\xEDcios"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &241700762
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241700761}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
+  m_LocalPosition: {x: 0, y: 0, z: -29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597681160}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 166, y: -230}
+  m_SizeDelta: {x: 200, y: 35.7305}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &241700763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241700761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Comer um peixe que se empanturrou de detritos oce\xE2nicos por toda a
+    sua (curta) vida pode desencadear uma s\xE9rie de rea\xE7\xF5es no seu organismo,
+    que v\xE3o desde o levemente desagrad\xE1vel at\xE9 o cientificamente intrigante
+    (e perigoso).\r\n\r\nI. Sintomas Neurol\xF3gicos e Cognitivos:\r\n\r\nParestesia
+    (dorm\xEAncia e formigamento, especialmente nas m\xE3os, p\xE9s e ao redor da
+    boca).\r\n\r\nAtaxia (perda de coordena\xE7\xE3o motora, dificuldade para andar
+    ou executar movimentos precisos).\r\n\r\nDisartria (dificuldade na fala, fala
+    arrastada).\r\n\r\nDefici\xEAncia Auditiva e Visual (perda de campo de vis\xE3o,
+    vis\xE3o tubular, zumbido nos ouvidos - tinnitus).\r\n\r\nTremores Incontrol\xE1veis
+    (especialmente nas extremidades).\r\n\r\nIrritabilidade, Labilidade Emocional
+    (mudan\xE7as bruscas de humor, ansiedade).\r\n\r\nProblemas de Mem\xF3ria (dificuldade
+    de concentra\xE7\xE3o e lembran\xE7a).\r\n\r\nEncefalopatia (danos cerebrais
+    que podem levar a convuls\xF5es e, em casos extremos, coma).\r\n\r\nSintomas
+    Gastrointestinais e Sist\xEAmicos:\r\n\r\nN\xE1useas e V\xF4mitos Incessantes.\r\n\r\nDores
+    Abdominais Agudas (c\xF3licas intensas).\r\n\r\nDiarreia Sanguinolenta ou Persistente.\r\n\r\nAnemia
+    (causada pela inibi\xE7\xE3o da produ\xE7\xE3o de gl\xF3bulos vermelhos).\r\n\r\nNefrotoxicidade
+    (dano aos rins, levando \xE0 protein\xFAria, glicos\xFAria e, potencialmente,
+    insufici\xEAncia renal).\r\n\r\nHepatotoxicidade (danos ao f\xEDgado).\r\n\r\nII.
+    Sintomas End\xF3crinos e Imunol\xF3gicos:\r\n\r\nCloroacne (uma forma grave de
+    acne, resistente ao tratamento, que se manifesta como les\xF5es c\xEDsticas na
+    face e corpo).\r\n\r\nHiperpigmenta\xE7\xE3o da Pele (escurecimento de \xE1reas
+    da pele).\r\n\r\nDisfun\xE7\xE3o da Tireoide (interfer\xEAncia com os horm\xF4nios
+    tireoidianos).\r\n\r\nImunossupress\xE3o (diminui\xE7\xE3o da capacidade do corpo
+    de combater infe\xE7\xF5es).\r\n\r\nIrrita\xE7\xE3o Ocular Cr\xF4nica (conjuntivite).\r\n\r\nAmea\xE7as
+    de Longo Prazo (Ap\xF3s o Consumo Repetido):\r\n\r\nRisco Aumentado de Certos
+    C\xE2nceres (especialmente do f\xEDgado e trato biliar).\r\n\r\nComprometimento
+    Reprodutivo (diminui\xE7\xE3o da fertilidade).\r\n\r\nIII. A Contamina\xE7\xE3o
+    Bacteriana e Viral (Se o Lixo Incluir Esgoto)\r\nSe o peixe nadou em efluentes
+    n\xE3o tratados, voc\xEA pode enfrentar os seguintes sintomas de doen\xE7as transmitidas
+    pela \xE1gua e alimentos:\r\n\r\nGastroenterite Severa:\r\n\r\nFebre Alta e Calafrios.\r\n\r\nV\xF4mitos
+    Explosivos.\r\n\r\nExaust\xE3o e Fraqueza Generalizada.\r\n\r\nSintomas de Salmonelose,
+    E. coli ou Vibriose (dependendo da bact\xE9ria ingerida).\r\n\r\nIV. A Invas\xE3o
+    Micropl\xE1stica (O Lixo Invis\xEDvel)\r\nEmbora os efeitos diretos no corpo
+    humano de comer micropl\xE1sticos ainda estejam em intensa pesquisa, a preocupa\xE7\xE3o
+    reside na sua capacidade de liberar aditivos qu\xEDmicos e servir de vetor para
+    os contaminantes listados acima.\r\n\r\nA Potencial Irrita\xE7\xE3o Intestinal
+    Cr\xF4nica (Devido \xE0 presen\xE7a f\xEDsica das part\xEDculas, causando inflama\xE7\xE3o).\r\n\r\nA
+    Libera\xE7\xE3o de Ftalatos e Bisfenol A (BPA) (Alteradores end\xF3crinos que
+    podem simular ou bloquear horm\xF4nios).\r\n\r\nSintomas: Interfer\xEAncia metab\xF3lica,
+    potencialmente afetando o peso e a fun\xE7\xE3o hormonal.\r\n\r\nV. As Consequ\xEAncias
+    N\xE3o-Especificadas\r\nEsses s\xE3o os sintomas gen\xE9ricos que acompanham
+    a sensa\xE7\xE3o de ter ingerido algo que claramente n\xE3o foi feito para consumo
+    humano:\r\n\r\nUm Gosto Met\xE1lico Persistente na boca.\r\n\r\nHalitose (mau
+    h\xE1lito).\r\n\r\nCefaleias Intensas (dores de cabe\xE7a).\r\n\r\nUma Profunda
+    Sensa\xE7\xE3o de Arrependimento por ter escolhido esse peixe para o jantar."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -120.46304, y: -9.108841, z: -107.89288, w: -3123.6606}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &241700764
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241700761}
+  m_CullTransparentMesh: 1
+--- !u!114 &241700765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241700761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6ccbe8310ff2f448cae566ef8551bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarWarsScroll
+  velocidadeDeScroll: 100
+  limiteSuperiorY: 10000
 --- !u!1001 &251008392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6250,6 +6445,217 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53379ba6479c7ac41b759e5cfbf1ca58, type: 3}
+--- !u!1 &1118364175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1118364176}
+  - component: {fileID: 1118364179}
+  - component: {fileID: 1118364178}
+  - component: {fileID: 1118364177}
+  m_Layer: 5
+  m_Name: "TextoBenef\xEDcios"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1118364176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118364175}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
+  m_LocalPosition: {x: 0, y: 0, z: -29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597681160}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 166, y: -230}
+  m_SizeDelta: {x: 200, y: 35.7305}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1118364177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118364175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6ccbe8310ff2f448cae566ef8551bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarWarsScroll
+  velocidadeDeScroll: 100
+  limiteSuperiorY: 10000
+--- !u!114 &1118364178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118364175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "I. Sistema Cardiovascular e Hemodin\xE2mica (\xD4mega-3: EPA e DHA)\r\nOs
+    \xE1cidos graxos poli-insaturados de cadeia longa (PUFAs) s\xE3o essenciais para
+    a integridade cardiovascular:\r\nRedu\xE7\xE3o da Aterog\xEAnese: Inibi\xE7\xE3o
+    da prolifera\xE7\xE3o de c\xE9lulas musculares lisas vasculares e da agrega\xE7\xE3o
+    plaquet\xE1ria, retardando a forma\xE7\xE3o de placas ateroscler\xF3ticas.\r\nEfeito
+    Anti-Hipertensivo: Otimiza\xE7\xE3o da fun\xE7\xE3o endotelial e aumento da biodisponibilidade
+    do \xF3xido n\xEDtrico ($NO$), resultando em vasodilata\xE7\xE3o e redu\xE7\xE3o
+    da press\xE3o arterial sist\xF3lica e diast\xF3lica.\r\nModula\xE7\xE3o Lip\xEDdica
+    (Hipotrigliceridemia): Diminui\xE7\xE3o da s\xEDntese hep\xE1tica de lipoprote\xEDnas
+    de muito baixa densidade (VLDL) e aumento do catabolismo de triglicer\xEDdeos,
+    resultando na redu\xE7\xE3o cl\xEDnica dos n\xEDveis s\xE9ricos de triglicer\xEDdeos.\r\nEstabiliza\xE7\xE3o
+    Eletrofisiol\xF3gica: Redu\xE7\xE3o da excitabilidade mioc\xE1rdica e aumento
+    do limiar para arritmias ventriculares fatais (a\xE7\xE3o antiarr\xEDtmica).\r\nA\xE7\xE3o
+    Anti-Inflamat\xF3ria Sist\xEAmica: Convers\xE3o metab\xF3lica de EPA e DHA em
+    mediadores lip\xEDdicos especializados pr\xF3-resolu\xE7\xE3o, como as Resolvinas,
+    Protectinas e Maresinas, que ativamente resolvem a inflama\xE7\xE3o cr\xF4nica.\r\nMelhoria
+    da Elasticidade Arterial: Contribui\xE7\xE3o para a manuten\xE7\xE3o da complac\xEAncia
+    vascular, vital para a microcircula\xE7\xE3o.\r\nII. Sistema Nervoso Central
+    e Fun\xE7\xE3o Cognitiva (DHA)O DHA representa at\xE9 60% dos PUFAs nas membranas
+    neuronais e da retina, sendo crucial para o desenvolvimento e manuten\xE7\xE3o
+    neural:\r\nNeuroplasticidade Aumentada: Otimiza\xE7\xE3o da fluidez das membranas
+    sin\xE1pticas, facilitando a transmiss\xE3o eficiente de sinais neurais.\r\nDesenvolvimento
+    Neurol\xF3gico Fetal: Fornecimento essencial de DHA para o desenvolvimento do
+    c\xE9rebro e retina durante a gesta\xE7\xE3o e lacta\xE7\xE3o.\r\nFun\xE7\xE3o
+    de Mem\xF3ria e Aprendizagem: Suporte \xE0 integridade estrutural e funcional
+    do hipocampo.\r\nPreven\xE7\xE3o da Degenera\xE7\xE3o Neural: Atividade antioxidante
+    e anti-inflamat\xF3ria que protege contra a neurotoxicidade e o estresse oxidativo,
+    retardando potencialmente doen\xE7as neurodegenerativas (e.g., Alzheimer).\r\nRegula\xE7\xE3o
+    do Humor: Modula\xE7\xE3o de vias de neurotransmiss\xE3o, incluindo a serotonina
+    e a dopamina, com potencial benef\xEDcio na gest\xE3o de dist\xFArbios de humor.\r\nIII.
+    Sistema End\xF3crino e Metabolismo (Vitaminas Lipossol\xFAveis e Iodo)\r\nHomeostase
+    da Glicose: Melhoria da sensibilidade \xE0 insulina por meio da modula\xE7\xE3o
+    da adiponectina e redu\xE7\xE3o da inflama\xE7\xE3o do tecido adiposo.\r\nMetabolismo
+    \xD3sseo (Vitamina D): O peixe \xE9 uma fonte prim\xE1ria de Vitamina D3 (Colecalciferol),
+    essencial para a absor\xE7\xE3o intestinal de c\xE1lcio e f\xF3sforo, crucial
+    para a mineraliza\xE7\xE3o \xF3ssea e preven\xE7\xE3o da osteoporose.\r\nFun\xE7\xE3o
+    Tireoidiana (Iodo e Sel\xEAnio): Fornecimento de iodo, fundamental para a s\xEDntese
+    dos horm\xF4nios tireoidianos (T3, T4), e sel\xEAnio, um cofator da enzima desiodase
+    que ativa esses horm\xF4nios. Otimiza\xE7\xE3o da taxa metab\xF3lica basal.\r\nRegula\xE7\xE3o
+    Hormonal Geral: A Vitamina D \xE9 um pr\xF3-horm\xF4nio que influencia a express\xE3o
+    de centenas de genes e auxilia na regula\xE7\xE3o de horm\xF4nios sexuais e pept\xEDdeos.\r\nIV.
+    Estrutura Musculoesquel\xE9tica e Composi\xE7\xE3o Corporal (Prote\xEDna de Alta
+    BV)O peixe fornece prote\xEDna de alto valor biol\xF3gico (BV), contendo todos
+    os amino\xE1cidos essenciais:\r\nReparo e Hipertrofia Muscular: Fornecimento
+    eficiente de amino\xE1cidos para a s\xEDntese proteica muscular (MPS) p\xF3s-exerc\xEDcio.\r\nPreven\xE7\xE3o
+    da Sarcopenia: Contribui\xE7\xE3o para a manuten\xE7\xE3o da massa muscular magra
+    em popula\xE7\xF5es idosas, vital para a mobilidade e qualidade de vida.\r\nSaciedade
+    Prolongada (Termog\xEAnese): O alto teor proteico induz uma maior termog\xEAnese
+    diet\xE9tica (TEF), auxiliando no controle do apetite e na gest\xE3o de peso
+    corporal.\r\nV. Integridade Celular e Imunologia (Antioxidantes e Micronutrientes)\r\nProte\xE7\xE3o
+    Contra o Estresse Oxidativo (Vitamina E e Sel\xEAnio): O peixe de qualidade fornece
+    antioxidantes que atuam na neutraliza\xE7\xE3o de radicais livres, protegendo
+    as membranas celulares (incluindo as mitocondriais) contra o dano oxidativo.\r\nMatura\xE7\xE3o
+    e Ativa\xE7\xE3o Imunol\xF3gica: O Sel\xEAnio e o Zinco s\xE3o cofatores cruciais
+    para a atividade de c\xE9lulas do sistema imune inato e adaptativo (e.g., linf\xF3citos
+    T).\r\nSa\xFAde Tegumentar (Pele, Cabelo, Unhas): Os \xE1cidos graxos e as prote\xEDnas
+    fornecem os precursores essenciais para a manuten\xE7\xE3o da barreira cut\xE2nea
+    e a produ\xE7\xE3o de queratina e col\xE1geno.\r\nS\xEDntese de DNA e Hematopoiese
+    (Vitamina B12): A presen\xE7a de Cobalamina (Vitamina B12) \xE9 indispens\xE1vel
+    para a forma\xE7\xE3o de gl\xF3bulos vermelhos (preven\xE7\xE3o da anemia megalobl\xE1stica)
+    e para a manuten\xE7\xE3o da bainha de mielina."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -120.46304, y: -9.108841, z: -107.89288, w: -3123.6606}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1118364179
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118364175}
+  m_CullTransparentMesh: 1
 --- !u!4 &1127663937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 405fe97d9177f054fbc378e49aaf8520, type: 3}
@@ -6656,8 +7062,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7183,6 +7589,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1406004858}
+  - {fileID: 241700762}
+  - {fileID: 1118364176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

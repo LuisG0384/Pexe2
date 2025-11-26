@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     [Header("Configurações")]
-    public float tempoEmMinutos = 2f; 
+    public float tempoEmMinutos = 1f; 
     public TMP_Text textoDoTimer;     
 
     [Header("Visual")]
@@ -16,6 +17,8 @@ public class Timer : MonoBehaviour
     
     private float tempoRestante;
     private bool estaContando = true;
+
+    [SerializeField] CollectedText points;
 
     void Start()
     {
@@ -69,8 +72,7 @@ public class Timer : MonoBehaviour
 
         Debug.Log("GAME OVER! O tempo acabou.");
 
-        // AQUI VOCÊ COLOCA A LÓGICA DE PERDER O JOGO
-        // Exemplo:
-        // FindObjectOfType<GameManager>().GameOver();
+        PontosScript.pontuacao = int.Parse(points.texto.text);
+        SceneManager.LoadScene("Final");
     }
 }

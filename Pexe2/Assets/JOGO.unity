@@ -3137,10 +3137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eea8b66f880d8541b7c0071ed1ca3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerRegressivo
-  tempoEmMinutos: 2
+  tempoEmMinutos: 0.3
   textoDoTimer: {fileID: 851916601}
   corNormal: {r: 1, g: 1, b: 1, a: 1}
   "corCr\xEDtica": {r: 1, g: 0, b: 0, a: 1}
+  points: {fileID: 1319198563}
 --- !u!114 &851916601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,6 +5337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1a06f417f1e154ea9b51a241a17b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texto: {fileID: 0}
 --- !u!114 &1319198564
 MonoBehaviour:
   m_ObjectHideFlags: 0

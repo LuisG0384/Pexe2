@@ -29,6 +29,9 @@ public class FinalPoint : MonoBehaviour
 
         }
 
+        point = PontosScript.pontuacao;
+        text.text = point.ToString();
+
         Destroy(plataforma);
         yield return new WaitForSeconds(0.12f);
         if(point < 10) fedor.Play();
