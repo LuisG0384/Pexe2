@@ -4,8 +4,8 @@ public class ComidaMove : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
 
-    public float speed = 6f;
-    public float verticalSpeed = 4f;
+    float speed = 10f;
+    float verticalSpeed = 10f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -41,8 +41,6 @@ public class ComidaMove : MonoBehaviour
         if (isTargetDetected && Target != null)
         {
             
-
-            
             float x = Target.position.x - transform.position.x;
             if (x > 0) x = -1; else x = 1; 
             float z = Target.position.z - transform.position.z;
@@ -70,9 +68,8 @@ public class ComidaMove : MonoBehaviour
 
             controller.Move(finalMove * Time.deltaTime);
         }
-        else if (cont < 500)
+        else if (cont < 300)
         {
-            
 
             cont++;
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -91,7 +88,7 @@ public class ComidaMove : MonoBehaviour
                 transform.rotation = Quaternion.Euler(currentTilt, angle, 0f);
 
                 Vector3 moveDir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
-                moveCalculation = moveDir.normalized * speed;
+                moveCalculation = moveDir.normalized;
             }
             else
             {
@@ -109,8 +106,8 @@ public class ComidaMove : MonoBehaviour
         else if (cont >= 20)
         {
             cont = 0;
-            horizontal = UnityEngine.Random.Range(-1, 2);
-            vertical = UnityEngine.Random.Range(-1, 2);
+            horizontal = UnityEngine.Random.Range(-1, 2) * speed;
+            vertical = UnityEngine.Random.Range(-1, 2) * speed;
             yVelocity = Random.Range(-1, 2) * verticalSpeed;
         }
 

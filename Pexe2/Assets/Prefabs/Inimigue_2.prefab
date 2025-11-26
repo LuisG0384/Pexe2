@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 8424113571610458768}
   - component: {fileID: 8516804249104664191}
   - component: {fileID: 468835905046249087}
-  - component: {fileID: 8273534810050717704}
   - component: {fileID: 1653665465817768541}
-  - component: {fileID: 3839866488765151795}
+  - component: {fileID: 1088179297545063136}
   m_Layer: 0
   m_Name: Radar
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: 0, z: -0.01}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 11.9241, y: 11.9241, z: 11.9241}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5444129894933814621}
@@ -52,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397481455355071198}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -114,18 +113,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.50260556
   m_Center: {x: 0.0060008857, y: 0, z: 0.0011449398}
---- !u!114 &8273534810050717704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397481455355071198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db908326f6aaa24abea873cab900de7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1653665465817768541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3839866488765151795
+--- !u!114 &1088179297545063136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,9 +149,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 397481455355071198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db908326f6aaa24abea873cab900de7, type: 3}
+  m_Script: {fileID: 11500000, guid: be9b36d67edde3a41a1cded3a18ba5c3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::RadarScript
 --- !u!1 &786061196679157002
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,9 +307,9 @@ GameObject:
   - component: {fileID: 5444129894933814621}
   - component: {fileID: 2234124622101118826}
   - component: {fileID: 7250135279104850404}
-  - component: {fileID: -3514175397978166398}
   - component: {fileID: -4882500397903171807}
   - component: {fileID: -8850604324323331820}
+  - component: {fileID: 3898404655108787115}
   m_Layer: 0
   m_Name: Inimigue_2
   m_TagString: Inimigue
@@ -339,8 +326,8 @@ Transform:
   m_GameObject: {fileID: 1982360528425734211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.99889207, z: -0, w: -0.047060445}
-  m_LocalPosition: {x: 29.28, y: 7.8779936, z: 53.89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 29.283, y: 7.8779936, z: 53.888}
+  m_LocalScale: {x: 1.2865887, y: 1.2865887, z: 1.2865887}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1463300051346582015}
@@ -400,26 +387,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3514175397978166398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982360528425734211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90de80303322b4c4783d5b55e331a7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InimigueMove
-  controller: {fileID: 7250135279104850404}
-  speed: 6
-  verticalSpeed: 4
-  turnSmoothTime: 0.1
-  maxTiltAngle: 45
-  tiltSpeed: 3
-  isTargetDetected: 0
-  Target: {fileID: 0}
 --- !u!114 &-4882500397903171807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +501,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3898404655108787115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982360528425734211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51fbd24de4e47274c82b6081d88f54a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InimigueMove
+  controller: {fileID: 7250135279104850404}
+  turnSmoothTime: 0.1
+  maxTiltAngle: 45
+  tiltSpeed: 3
+  isTargetDetected: 0
+  Target: {fileID: 0}
 --- !u!1 &3556002180837636921
 GameObject:
   m_ObjectHideFlags: 0

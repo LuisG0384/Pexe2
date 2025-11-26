@@ -4,8 +4,8 @@ public class InimigueMove : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
 
-    public float speed = 6f;
-    public float verticalSpeed = 4f;
+    float speed = 15f;
+    float verticalSpeed = 15f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -36,11 +36,10 @@ public class InimigueMove : MonoBehaviour
 
     void Update()
     {
-        float targetTilt = 0f; 
+        float targetTilt = 0f;
 
         if (isTargetDetected && Target != null)
         {
-            
 
             float x = Target.position.x - transform.position.x;
             if (x > 0) x = 1; else x = -1;
@@ -50,32 +49,32 @@ public class InimigueMove : MonoBehaviour
             float targetAngle = Mathf.Atan2(x, z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
-            
+
             float yDiff = Target.position.y - transform.position.y;
 
-            if (yDiff > 1.0f) targetTilt = -maxTiltAngle; 
-            else if (yDiff < -1.0f) targetTilt = maxTiltAngle; 
+            if (yDiff > 1.0f) targetTilt = -maxTiltAngle;
+            else if (yDiff < -1.0f) targetTilt = maxTiltAngle;
 
-           
+
 
             Vector3 moveDir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
 
-            finalMove = Target.position - transform.position;
+            finalMove = (Target.position - transform.position).normalized * speed;
             controller.Move(finalMove * Time.deltaTime);
 
-            
+
             transform.rotation = Quaternion.Euler(currentTilt, angle, 0f);
         }
         else if (cont < 500)
         {
-            
+
 
             cont++;
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-            
-            if (yVelocity > 0.1f) targetTilt = -maxTiltAngle;      
-            else if (yVelocity < -0.1f) targetTilt = maxTiltAngle; 
+
+            if (yVelocity > 0.1f) targetTilt = -maxTiltAngle;
+            else if (yVelocity < -0.1f) targetTilt = maxTiltAngle;
             Vector3 moveCalculation = Vector3.zero;
 
             if (direction.magnitude >= 0.1f)
@@ -87,7 +86,7 @@ public class InimigueMove : MonoBehaviour
                 transform.rotation = Quaternion.Euler(currentTilt, angle, 0f);
 
                 Vector3 moveDir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
-                moveCalculation = moveDir.normalized * speed;
+                moveCalculation = moveDir.normalized;
             }
             else
             {
@@ -102,11 +101,11 @@ public class InimigueMove : MonoBehaviour
                 controller.Move(moveCalculation * Time.deltaTime);
             }
         }
-        else if (cont >= 20) 
+        else if (cont >= 20)
         {
             cont = 0;
-            horizontal = UnityEngine.Random.Range(-1, 2);
-            vertical = UnityEngine.Random.Range(-1, 2);
+            horizontal = UnityEngine.Random.Range(-1, 2) * speed;
+            vertical = UnityEngine.Random.Range(-1, 2) * speed;
             yVelocity = Random.Range(-1, 2) * verticalSpeed;
         }
 

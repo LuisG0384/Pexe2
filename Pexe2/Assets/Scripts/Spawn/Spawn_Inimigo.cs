@@ -10,7 +10,6 @@ public class Spawn_Inimigo : MonoBehaviour
     [SerializeField] private int maximoInimigos = 3;
     [SerializeField] CharacterController controller;
 
-    [Header("Área Global (Arraste o Box Collider)")]
     public BoxCollider areaDeSpawn; 
 
     SpawnManagerScript manager;

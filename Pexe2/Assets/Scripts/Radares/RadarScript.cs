@@ -6,9 +6,6 @@ public class RadarScript : MonoBehaviour
     GameObject som;
     AudioScript controle;
 
-    float originalVolume;
-    float fadeOutDuration = 0.5f;
-
     void Start()
     {
         InimigueMove = GetComponentInParent<InimigueMove>();
