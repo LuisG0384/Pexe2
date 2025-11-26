@@ -1,37 +1,82 @@
 using UnityEngine;
-using TMPro; // Não se esqueça deste using se estiver usando TextMeshPro
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StarWarsScroll : MonoBehaviour
 {
-    [Tooltip("A velocidade em que o texto irá se mover para cima.")]
-    public float velocidadeDeScroll = 50f;
+    [Header("Configuração")]
+    public float velocidadeDeScroll = 30f;
+    [Range(0.1f, 2.0f)] public float fatorAceleracao = 0.3f;
+    public float limiteSuperiorY = 1500f;
 
-    [Tooltip("O ponto Y onde o texto deve parar de subir e desaparecer (fora da tela).")]
-    public float limiteSuperiorY = 500f;
+    [Header("Tela Preta")]
+    public CanvasGroup painelPreto;
+    public float velocidadeDoFade = 0.5f;
+    public float tempoDeEsperaFinal = 3.0f;
 
-    // O componente de Transform do objeto onde este script está anexado (o texto em si)
+    // Internas
     private RectTransform rectTransform;
+    private float velocidadeAtual;
+    private bool textoAcabou = false;
+    private bool fadeAcabou = false;
+    private float contadorEspera = 0f;
 
-    void Start()
+    // Trava para o texto não andar sozinho
+    private bool podeMover = false;
+
+    void Awake()
     {
-        // Pega o componente RectTransform, que controla a posição do UI no World Space
         rectTransform = GetComponent<RectTransform>();
+
+        // Garante que o painel preto comece invisível e ativado
+        if (painelPreto != null)
+        {
+            painelPreto.alpha = 0f;
+            painelPreto.gameObject.SetActive(true);
+        }
+    }
+
+    public void Iniciar(float velocidade)
+    {
+        velocidadeAtual = velocidade; 
+        podeMover = true;            
     }
 
     void Update()
     {
-        // Move o texto para cima (eixo Y local) a cada frame
-        // Time.deltaTime garante que a velocidade seja independente da taxa de quadros (framerate)
-        rectTransform.Translate(Vector3.up * velocidadeDeScroll * Time.deltaTime);
+        if (!podeMover) return;
 
-        // Se o texto atingir o limite superior, você pode reiniciá-lo ou destruí-lo.
-        if (rectTransform.localPosition.y > limiteSuperiorY)
+        if (!textoAcabou)
         {
-            // Exemplo: Destrói o objeto de texto quando ele sai da tela
-            Destroy(gameObject);
+            rectTransform.anchoredPosition += new Vector2(0, velocidadeAtual * Time.deltaTime);
 
-            // Aqui você pode carregar a próxima cena, se o texto for a introdução
-            // SceneManager.LoadScene("ProximaCena");
+            velocidadeAtual += (velocidadeAtual * fatorAceleracao) * Time.deltaTime;
+
+            if (rectTransform.anchoredPosition.y > limiteSuperiorY)
+            {
+                textoAcabou = true;
+            }
+        }
+        else if (!fadeAcabou)
+        {
+            if (painelPreto != null)
+            {
+                painelPreto.alpha += Time.deltaTime * velocidadeDoFade;
+                if (painelPreto.alpha >= 1)
+                {
+                    painelPreto.alpha = 1;
+                    fadeAcabou = true;
+                }
+            }
+            else fadeAcabou = true;
+        }
+        else
+        {
+            contadorEspera += Time.deltaTime;
+            if (contadorEspera >= tempoDeEsperaFinal)
+            {
+                SceneManager.LoadScene("MENU");
+            }
         }
     }
 }

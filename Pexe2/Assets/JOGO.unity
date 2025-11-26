@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawn_Inimigo
   listaDeInimigos:
   - {fileID: 2973094637521921911, guid: 6809fff13d1e42c40bed856f5a6c7682, type: 3}
-  inimigoTimer: 5
+  inimigoTimer: 2
   maximoInimigos: 6
   controller: {fileID: 0}
   areaDeSpawn: {fileID: 445616039}
@@ -2656,7 +2656,7 @@ MonoBehaviour:
   - {fileID: 1982360528425734211, guid: e8aafcd0fa1912849a69ad6b6884309e, type: 3}
   tempoSpawn: 3
   areaDeSpawn: {fileID: 526274862}
-  maximoComidas: 10
+  maximoComidas: 15
   minimoParaReiniciar: 2
 --- !u!65 &526274862
 BoxCollider:
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   - {fileID: 1982360528425734211, guid: 318aa164f4292834085f0cdd0f332f89, type: 3}
   tempoSpawn: 3
   areaDeSpawn: {fileID: 697081645}
-  maximoComidas: 10
+  maximoComidas: 20
   minimoParaReiniciar: 5
 --- !u!65 &697081645
 BoxCollider:
@@ -9020,7 +9020,7 @@ MonoBehaviour:
   tempoSpawn: 1
   terreno: {fileID: 1786624521}
   maximoGramas: 15
-  minimoParaReiniciar: 20
+  minimoParaReiniciar: 10
 --- !u!1001 &1756893945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10769,7 +10769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawn_Inimigo
   listaDeInimigos:
   - {fileID: 1982360528425734211, guid: e0f1dfdb524dc144bb6bd872d8cab722, type: 3}
-  inimigoTimer: 3
+  inimigoTimer: 2
   maximoInimigos: 20
   controller: {fileID: 0}
   areaDeSpawn: {fileID: 1971358146}

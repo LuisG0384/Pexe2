@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: 0, z: -0.01}
-  m_LocalScale: {x: 11.9241, y: 11.9241, z: 11.9241}
+  m_LocalScale: {x: 13.66866, y: 13.66866, z: 13.66866}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5444129894933814621}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 3898404655108787115}
   m_Layer: 0
   m_Name: Inimigue_2
-  m_TagString: Inimigue
+  m_TagString: Inimigue2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,8 +326,8 @@ Transform:
   m_GameObject: {fileID: 1982360528425734211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.99889207, z: -0, w: -0.047060445}
-  m_LocalPosition: {x: 29.283, y: 7.8779936, z: 53.888}
-  m_LocalScale: {x: 1.2865887, y: 1.2865887, z: 1.2865887}
+  m_LocalPosition: {x: 29.282, y: 7.8779936, z: 53.889}
+  m_LocalScale: {x: 1.1501203, y: 1.1501203, z: 1.1501203}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1463300051346582015}

@@ -7,7 +7,8 @@ public class Spawn_Inimigo : MonoBehaviour
     [Header("Configuração dos Inimigos")]
     [SerializeField] GameObject[] listaDeInimigos; 
     [SerializeField] private float inimigoTimer = 5f;
-    [SerializeField] private int maximoInimigos = 3;
+    private int maximoTuba = 7;
+    private int maximoPira = 20;
     [SerializeField] CharacterController controller;
 
     public BoxCollider areaDeSpawn; 
@@ -55,10 +56,11 @@ public class Spawn_Inimigo : MonoBehaviour
             yield return new WaitForSeconds(tempoAleatorio);
 
             
-            int contagemAtual = GameObject.FindGameObjectsWithTag("Inimigue").Length;
+            int contagemT = GameObject.FindGameObjectsWithTag("Inimigue").Length;
+            int contagemP = GameObject.FindGameObjectsWithTag("Inimigue2").Length;
 
-            
-            if (manager != null && manager.pode && contagemAtual < maximoInimigos)
+
+            if (manager != null && manager.pode && contagemT < maximoTuba && contagemP < maximoPira)
             {
                 
                 int indexAleatorio = Random.Range(0, listaDeInimigos.Length);
