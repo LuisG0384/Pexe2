@@ -5255,16 +5255,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Comer um peixe que se empanturrou de detritos oce\xE2nicos por toda a
     sua (curta) vida pode desencadear uma s\xE9rie de rea\xE7\xF5es no seu organismo,
-    que v\xE3o desde o levemente desagrad\xE1vel at\xE9 o sintomas mais graves.\r\n\r\nI.
-    Sintomas Neurol\xF3gicos e Cognitivos:\r\n\r\nParestesia (dorm\xEAncia e formigamento,
-    especialmente nas m\xE3os, p\xE9s e ao redor da boca).\r\n\r\nAtaxia (perda de
-    coordena\xE7\xE3o motora, dificuldade para andar ou executar movimentos precisos).\r\n\r\nDisartria
-    (dificuldade na fala, fala arrastada).\r\n\r\nDefici\xEAncia Auditiva e Visual
-    (perda de campo de vis\xE3o, vis\xE3o tubular, zumbido nos ouvidos - tinnitus).\r\n\r\nTremores
-    Incontrol\xE1veis (especialmente nas extremidades).\r\n\r\nIrritabilidade, Labilidade
-    Emocional (mudan\xE7as bruscas de humor, ansiedade).\r\n\r\nProblemas de Mem\xF3ria
-    (dificuldade de concentra\xE7\xE3o e lembran\xE7a).\r\n\r\nEncefalopatia (danos
-    cerebrais que podem levar a convuls\xF5es e, em casos extremos, coma).\r\n\r\nSintomas
+    que v\xE3o desde o levemente desagrad\xE1vel at\xE9 o cientificamente intrigante
+    (e perigoso).\r\n\r\nI. Sintomas Neurol\xF3gicos e Cognitivos:\r\n\r\nParestesia
+    (dorm\xEAncia e formigamento, especialmente nas m\xE3os, p\xE9s e ao redor da
+    boca).\r\n\r\nAtaxia (perda de coordena\xE7\xE3o motora, dificuldade para andar
+    ou executar movimentos precisos).\r\n\r\nDisartria (dificuldade na fala, fala
+    arrastada).\r\n\r\nDefici\xEAncia Auditiva e Visual (perda de campo de vis\xE3o,
+    vis\xE3o tubular, zumbido nos ouvidos - tinnitus).\r\n\r\nTremores Incontrol\xE1veis
+    (especialmente nas extremidades).\r\n\r\nIrritabilidade, Labilidade Emocional
+    (mudan\xE7as bruscas de humor, ansiedade).\r\n\r\nProblemas de Mem\xF3ria (dificuldade
+    de concentra\xE7\xE3o e lembran\xE7a).\r\n\r\nEncefalopatia (danos cerebrais
+    que podem levar a convuls\xF5es e, em casos extremos, coma).\r\n\r\nSintomas
     Gastrointestinais e Sist\xEAmicos:\r\n\r\nN\xE1useas e V\xF4mitos Incessantes.\r\n\r\nDores
     Abdominais Agudas (c\xF3licas intensas).\r\n\r\nDiarreia Sanguinolenta ou Persistente.\r\n\r\nAnemia
     (causada pela inibi\xE7\xE3o da produ\xE7\xE3o de gl\xF3bulos vermelhos).\r\n\r\nNefrotoxicidade
@@ -6516,9 +6517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Comer um peixe que manteve uma dieta saud\xE1vel durante sua (curta) vida
-    traz uma s\xE9rie de benef\xEDcios ao organismo, desde nutrientes a regula\xE7\xE3o
-    hormonal.\n\nI. Sistema Cardiovascular e Hemodin\xE2mica (\xD4mega-3: EPA e DHA)\r\nOs
+  m_text: "I. Sistema Cardiovascular e Hemodin\xE2mica (\xD4mega-3: EPA e DHA)\r\nOs
     \xE1cidos graxos poli-insaturados de cadeia longa (PUFAs) s\xE3o essenciais para
     a integridade cardiovascular:\r\nRedu\xE7\xE3o da Aterog\xEAnese: Inibi\xE7\xE3o
     da prolifera\xE7\xE3o de c\xE9lulas musculares lisas vasculares e da agrega\xE7\xE3o
@@ -7038,7 +7037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48, y: -123}
+  m_AnchoredPosition: {x: 0, y: -123}
   m_SizeDelta: {x: 376.3391, y: 380.4738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406004859
@@ -7154,8 +7153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FinalPoint
   plataforma: {fileID: 1720191360}
   fedor: {fileID: 42358874}
-  textoBom: {fileID: 1118364177}
-  textoRuim: {fileID: 241700765}
 --- !u!1 &1411542580
 GameObject:
   m_ObjectHideFlags: 0
