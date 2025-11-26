@@ -9,9 +9,13 @@ public class FinalPoint : MonoBehaviour
     int count = 30;
     [SerializeField] GameObject plataforma;
     [SerializeField] ParticleSystem fedor;
+    [SerializeField] StarWarsScroll textoBom;
+    [SerializeField] StarWarsScroll textoRuim;
     private void Awake()
     {
         fedor.Stop();
+        textoBom.velocidadeDeScroll = 0;
+        textoRuim.velocidadeDeScroll = 0;
         text = GetComponent<TMPro.TMP_Text>();
 
         StartCoroutine(LoopTextUpdate());
@@ -29,12 +33,23 @@ public class FinalPoint : MonoBehaviour
 
         }
 
-        point = PontosScript.pontuacao;
+        //point = PontosScript.pontuacao;
+        point = 100;
         text.text = point.ToString();
 
         Destroy(plataforma);
         yield return new WaitForSeconds(0.12f);
-        if(point < 10) fedor.Play();
+        if (point < 10)
+        {
+            fedor.Play();
+            textoRuim.velocidadeDeScroll = 70f;
+        }
+        else
+        {
+            {
+                textoBom.velocidadeDeScroll = 70f;
+            }
+        }
     }
 
 }

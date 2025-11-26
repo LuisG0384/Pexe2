@@ -27,6 +27,7 @@ public class InimigueMove : MonoBehaviour
     [HideInInspector] public bool isTargetDetected = false;
     [HideInInspector] public Transform Target;
 
+
     void Start()
     {
         
@@ -40,8 +41,6 @@ public class InimigueMove : MonoBehaviour
 
         if (isTargetDetected && Target != null)
         {
-            
-
             float x = Target.position.x - transform.position.x;
             if (x > 0) x = 1; else x = -1;
             float z = Target.position.z - transform.position.z;
