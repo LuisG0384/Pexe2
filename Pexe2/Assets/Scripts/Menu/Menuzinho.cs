@@ -9,6 +9,7 @@ public class Menuzinho: MonoBehaviour
     [SerializeField] private string nome_Level_Jogo;
     [SerializeField] private GameObject painel_Menu_Inicial;
     [SerializeField] private GameObject painel_Menu_Opcoes;
+    [SerializeField] private GameObject painel_Menu_Guia;
 
     public void Jogar()
     {
@@ -24,6 +25,18 @@ public class Menuzinho: MonoBehaviour
     public void Fechar_Opcoes()
     {
         painel_Menu_Opcoes.SetActive(false);
+        painel_Menu_Inicial.SetActive(true);
+    }
+
+    public void Abrir_Guia()
+    {
+        painel_Menu_Inicial.SetActive(false);
+        painel_Menu_Guia.SetActive(true);
+    }
+
+    public void Fechar_Guia()
+    {
+        painel_Menu_Guia.SetActive(false);
         painel_Menu_Inicial.SetActive(true);
     }
 

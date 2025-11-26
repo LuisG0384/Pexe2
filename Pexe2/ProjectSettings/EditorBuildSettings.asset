@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/JOGO.unity
     guid: dd81ca740068ea64aa34708b4facfbb3
+  - enabled: 1
+    path: Assets/Final.unity
+    guid: 8ac8215eb57052e47b10510a68b25311
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
