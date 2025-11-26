@@ -1,43 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Necessário para o Slider
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections; 
 
 public class Lives : MonoBehaviour
 {
     [Header("UI da Vida")]
-    public Slider barraDeVida; // Arraste seu Slider aqui no Inspector
+    public Slider barraDeVida;
+
+    [Header("Tela de Game Over")]
+    public GameObject painelGameOver;
+    public float tempoDoFade = 2.0f; 
 
     [Header("Configuração")]
-    public int maxLives = 100; // Vida máxima (ex: 100%)
+    public int maxLives = 100;
     private int currentLives;
 
     private void Start()
     {
         currentLives = maxLives;
+        Time.timeScale = 1f; 
 
-        // Configura a barra logo no início
+        if (painelGameOver != null)
+        {
+            painelGameOver.SetActive(false);
+        }
+
         if (barraDeVida != null)
         {
             barraDeVida.maxValue = maxLives;
             barraDeVida.value = currentLives;
         }
-        else
-        {
-            Debug.LogError("ERRO: Você esqueceu de arrastar o Slider para o script Lives!");
-        }
     }
 
     public void OnLifeRestore()
     {
-        // Se a vida não estiver cheia, cura
         if (currentLives < maxLives)
         {
-            currentLives += 10; // Cura 10 pontos (ajuste como quiser)
-
-            // Não deixa passar do máximo
+            currentLives += 10;
             if (currentLives > maxLives) currentLives = maxLives;
-
             UpdateVisuals();
         }
     }
@@ -46,45 +47,71 @@ public class Lives : MonoBehaviour
     {
         if (currentLives > 0)
         {
-            currentLives -= 10; // Perde 10 pontos de dano (ajuste como quiser)
-
-            // Garante que não fique negativo
+            currentLives -= 10;
             if (currentLives < 0) currentLives = 0;
-
             UpdateVisuals();
 
-            // Lógica de Morte (Vida zerou)
             if (currentLives <= 0)
             {
-                PararTimer();
-                // Aqui você pode chamar o Game Over
-                Debug.Log("Morreu!");
+                
+                StartCoroutine(AnimacaoGameOver());
             }
         }
     }
 
     void UpdateVisuals()
     {
-        if (barraDeVida != null)
-        {
-            // Atualiza o slider visualmente
-            barraDeVida.value = currentLives;
-        }
+        if (barraDeVida != null) barraDeVida.value = currentLives;
     }
 
-    void PararTimer()
+    IEnumerator AnimacaoGameOver()
     {
-        // Tenta achar o Timer (verifique se o nome do seu script é Timer ou TimerRegressivo)
+        Debug.Log("Iniciando Fade de Game Over...");
+
+        
         Timer timer = FindAnyObjectByType<Timer>();
-        if (timer != null)
+        if (timer != null) timer.enabled = false;
+
+        
+        if (painelGameOver != null)
         {
-            timer.enabled = false;
+            painelGameOver.SetActive(true);
+
+           
+            CanvasGroup cg = painelGameOver.GetComponent<CanvasGroup>();
+            if (cg == null) cg = painelGameOver.AddComponent<CanvasGroup>();
+
+            cg.alpha = 0; 
+
+            
+            float tempoPassado = 0f;
+
+            while (tempoPassado < tempoDoFade)
+            {
+                
+                tempoPassado += Time.unscaledDeltaTime;
+
+                
+                cg.alpha = tempoPassado / tempoDoFade;
+
+                
+                yield return null;
+            }
+
+            
+            cg.alpha = 1;
         }
-        else
-        {
-            // Caso esteja usando o script que fizemos antes
-            Timer timerR = FindAnyObjectByType<Timer>();
-            if (timerR != null) timerR.enabled = false;
-        }
+
+        // 4. SÓ AGORA Pausa o jogo e solta o mouse
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ReiniciarFase()
+    {
+        // Importante: Voltar o tempo ao normal antes de recarregar
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
